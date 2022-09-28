@@ -1,13 +1,8 @@
 # 物联大师
 
-**开源不易，加个星再走！！！**
+**注意，2.0版本与1.0有较大差异，不可以直接升级！！！** [查看V1.0](https://github.com/zgwit/iot-master/tree/v1)
 
-**开源不易，加个星再走！！！**
-
-**开源不易，加个星再走！！！**
-
-
-### [说明文档](https://iot-master.com/manual)  [在线演示demo](http://demo.iot-master.com:8080/) 用户名 admin 密码 123456
+### [说明文档](https://iot-master.com/manual)  [演示demo](http://demo.iot-master.com:8080/) 账号密码 admin 123456
 
 [![Go](https://github.com/zgwit/iot-master/actions/workflows/go.yml/badge.svg)](https://github.com/zgwit/iot-master/actions/workflows/go.yml)
 [![Go](https://github.com/zgwit/iot-master/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/zgwit/iot-master/actions/workflows/codeql-analysis.yml)
@@ -19,7 +14,7 @@
 推出的开源且免费的物联网智能网关系统，集成了标准Modbus和一些主流PLC协议，支持数据采集、公式计算、定时控制、异常报警、自动控制策略、流量监控、远程调试等功能，
 适用于大部分物联网或工业互联网应用场景。
 系统采用Golang编程实现，支持多种操作系统和CPU架构，可以运行在智能网关上，也可以安装在现场的电脑或工控机上，还能部署到云端服务器。
-系统支持可视化显示，内置组态编辑器和组件库，能够实现Web组态（SCADA），支持投放到大屏上。
+系统支持可视化显示，内置组态编辑器和组件库，能够实现Web组态（SCADA），支持投放大屏。
 
 项目摒弃复杂的平台架构思维，远离微服务，从真实需求出发，注重用户体验，做到简捷而不简单，真正解决物联网缺乏灵魂的问题。
 我们的宗旨是：让物联网实施变成一件简单的事情!!!
@@ -30,38 +25,22 @@
 - 单一程序文件，不需要配置环境，不依赖第三方服务，放服务器上就能跑
 - 极小内存占用，对于一百节点以内的物联网项目，只需要几十兆内存足够了，~~比起隔壁Java动辄大几百兆内存简直太省了~~
 - 支持工控机和智能网关，边缘计算也没问题
-- 支持Web组态，可视化，大屏展示，~~毕竟很多物联网项目都是面子工程~~
+- 支持二维组态，可视化，大屏展示，3D数据孪生 ~~毕竟很多物联网项目都是面子工程~~
 - 在线产品库、模板库、组态库，小白也能分分钟搞得有模有样【还在努力建设中】
 
 ## 项目架构图
 
 ![结构图](https://iot-master.com/frame.svg)
 
-## 组态编辑器（可视化）
+物联大师2.0拆分为边缘计算网关和主程序两部分，基于MQTT消息总线实现数据交换，通过插件机制实现系统的灵活扩展
 
-![云组态](https://iot-master.com/hmi-editor.png)
+注：MQTT协议目前仅支持3.1.1，可以使用系统内置的开源MQTT总线[mochi-co/mqtt](https://github.com/mochi-co/mqtt)或第三方服务
 
-## 官方插件
+## 项目前端
 
-- [ ] Flow 流式计算
-- [ ] *SCADA Web组态
-- [ ] *OPC-UA
-- [ ] MQTT 数据上报
-- [ ] DASH 数据看板
-- [ ] Influxdb2
-- [ ] *TDengine
-- [ ] *Camera 视频监控
-- [ ] *Weixin 微信支持
-- [ ] *Notice 报警通知
+[H5版，基于uniapp框架，可以打包成APP](https://github.com/zgwit/iot-master-uniapp)
 
-注: *标为收费插件
-
-
-## 前端代码库
-
-[H5版，基于uniapp，默认界面](https://github.com/zgwit/iot-master-uniapp)
-
-[PC版，基于NG-ZORRO](https://github.com/zgwit/iot-master-ui)（暂不维护，有商业需求请联系）
+[PC版，基于NG-ZORRO框架](https://github.com/zgwit/iot-master-ui)（开源版暂不维护，有商业需求请联系客服）
 
 
 ## 咨询服务
