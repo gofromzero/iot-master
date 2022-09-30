@@ -63,7 +63,11 @@
 - 邮箱：[jason@zgwit.com](mailto:jason@zgwit.com)
 - 手机：[15161515197](tel:15161515197)(微信同号)
 
-![微信群](https://iot-master.com/iot-master.png)
+
+| 技术交流群                                  | VIP客户群                                |
+|----------------------------------------|---------------------------------------|
+| ![微信群](https:/iot-master.com/tech.png) | ![微信群](https:/iot-master.com/vip.png) |
+
 
 ## 开源协议
 
