@@ -2,6 +2,7 @@ package core
 
 import (
 	"context"
+	"fmt"
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"github.com/mochi-co/mqtt/server"
 	"github.com/mochi-co/mqtt/server/events"
@@ -51,6 +52,9 @@ func Open(cfg broker.Options) error {
 	//物联大师 主连接
 	opts := mqtt.NewClientOptions()
 	if internal {
+		opts.AddBroker(":1883")
+		opts.SetClientID("internal")
+		//TODO 这里不生效，为啥
 		opts.SetDialer(&net.Dialer{
 			Resolver: &net.Resolver{Dial: func(ctx context.Context, network, address string) (net.Conn, error) {
 				c1, c2 := vconn.New()
@@ -65,6 +69,9 @@ func Open(cfg broker.Options) error {
 		opts.SetPassword(cfg.Password)
 	}
 	MQTT = mqtt.NewClient(opts)
+	token := MQTT.Connect()
+	token.Wait()
+	fmt.Println(token.Error())
 
 	//订阅消息
 	subscribeTopics(MQTT)

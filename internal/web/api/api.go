@@ -96,8 +96,7 @@ func RegisterRoutes(app *gin.RouterGroup) {
 	app.GET("/project/list", createCurdApiList[model.Project]())
 	app.POST("/project/create", createCurdApiCreate[model.Project](generateUUID, afterProjectCreate))
 	app.GET("/project/:id", parseParamStringId, createCurdApiGet[model.Project]())
-	app.POST("/project/:id", parseParamStringId, createCurdApiModify[model.Project](nil, afterProjectUpdate,
-		"name", "devices", "interface_id", "disabled"))
+	app.POST("/project/:id", parseParamStringId, createCurdApiModify[model.Project](nil, afterProjectUpdate, "name", "devices", "interface_id", "disabled"))
 	app.GET("/project/:id/delete", parseParamStringId, createCurdApiDelete[model.Project](nil, afterProjectDelete))
 
 	app.GET("/project/:id/values", parseParamStringId, projectValues)
@@ -109,8 +108,7 @@ func RegisterRoutes(app *gin.RouterGroup) {
 	app.GET("/device/list", createCurdApiList[model.Device]())
 	app.POST("/device/create", createCurdApiCreate[model.Device](generateUUID, afterDeviceCreate))
 	app.GET("/device/:id", parseParamStringId, createCurdApiGet[model.Device]())
-	app.POST("/device/:id", parseParamStringId, createCurdApiModify[model.Device](nil, afterDeviceUpdate,
-		"name", "tunnel_id", "product_id", "interface_id", "station", "disabled"))
+	app.POST("/device/:id", parseParamStringId, createCurdApiModify[model.Device](nil, afterDeviceUpdate, "name", "tunnel_id", "product_id", "interface_id", "station", "disabled"))
 	app.GET("/device/:id/delete", parseParamStringId, createCurdApiDelete[model.Device](afterDeviceDelete, nil))
 
 	app.GET("/device/:id/values", parseParamStringId, deviceValues)
@@ -131,8 +129,7 @@ func RegisterRoutes(app *gin.RouterGroup) {
 	app.GET("/gateway/list", createCurdApiList[model.Gateway]())
 	app.POST("/gateway/create", createCurdApiCreate[model.Gateway](generateUUID, nil))
 	app.GET("/gateway/:id", parseParamStringId, createCurdApiGet[model.Gateway]())
-	app.POST("/gateway/:id", parseParamStringId, createCurdApiModify[model.Gateway](nil, nil,
-		"name", "type", "version"))
+	app.POST("/gateway/:id", parseParamStringId, createCurdApiModify[model.Gateway](nil, nil, "name", "type", "version"))
 	app.GET("/gateway/:id/delete", parseParamStringId, createCurdApiDelete[model.Gateway](nil, nil))
 
 	//网关的通道和服务
@@ -144,9 +141,7 @@ func RegisterRoutes(app *gin.RouterGroup) {
 	app.GET("/server/list", createCurdApiList[model.Server]())
 	app.POST("/server/create", createCurdApiCreate[model.Server](generateUUID, afterServerCreate))
 	app.GET("/server/:id", parseParamStringId, createCurdApiGet[model.Server]())
-	app.POST("/server/:id", parseParamStringId, createCurdApiModify[model.Server](nil, afterServerUpdate,
-		"name", "type", "addr",
-		"retry", "register", "heartbeat", "protocol", "devices", "disabled"))
+	app.POST("/server/:id", parseParamStringId, createCurdApiModify[model.Server](nil, afterServerUpdate, "name", "type", "addr", "retry", "register", "heartbeat", "protocol", "devices", "disabled"))
 	app.GET("/server/:id/delete", parseParamStringId, createCurdApiDelete[model.Server](nil, afterServerDelete))
 
 	//服务的通道
@@ -157,8 +152,7 @@ func RegisterRoutes(app *gin.RouterGroup) {
 	app.GET("/tunnel/list", createCurdApiList[model.Tunnel]())
 	app.POST("/tunnel/create", createCurdApiCreate[model.Tunnel](generateUUID, afterTunnelCreate))
 	app.GET("/tunnel/:id", parseParamStringId, createCurdApiGet[model.Tunnel]())
-	app.POST("/tunnel/:id", parseParamStringId, createCurdApiModify[model.Tunnel](nil, afterTunnelUpdate,
-		"name", "type", "addr", "retry", "serial", "protocol", "disabled"))
+	app.POST("/tunnel/:id", parseParamStringId, createCurdApiModify[model.Tunnel](nil, afterTunnelUpdate, "name", "type", "addr", "retry", "serial", "protocol", "disabled"))
 	app.GET("/tunnel/:id/delete", parseParamStringId, createCurdApiDelete[model.Tunnel](nil, afterTunnelDelete))
 
 	//通道的设备
@@ -169,8 +163,7 @@ func RegisterRoutes(app *gin.RouterGroup) {
 	app.GET("/interface/list", createCurdApiList[model.Interface]())
 	app.POST("/interface/create", createCurdApiCreate[model.Interface](generateUUID, nil))
 	app.GET("/interface/:id", parseParamStringId, createCurdApiGet[model.Interface]())
-	app.POST("/interface/:id", parseParamStringId, createCurdApiModify[model.Interface](nil, nil,
-		"name"))
+	app.POST("/interface/:id", parseParamStringId, createCurdApiModify[model.Interface](nil, nil, "name"))
 	app.GET("/interface/:id/delete", parseParamStringId, createCurdApiDelete[model.Interface](nil, nil))
 
 	//插件接口
@@ -178,8 +171,7 @@ func RegisterRoutes(app *gin.RouterGroup) {
 	app.GET("/plugin/list", createCurdApiList[model.Plugin]())
 	app.POST("/plugin/create", createCurdApiCreate[model.Plugin](generateUUID, nil))
 	app.GET("/plugin/:id", parseParamStringId, createCurdApiGet[model.Plugin]())
-	app.POST("/plugin/:id", parseParamStringId, createCurdApiModify[model.Plugin](nil, nil,
-		"name"))
+	app.POST("/plugin/:id", parseParamStringId, createCurdApiModify[model.Plugin](nil, nil, "name"))
 	app.GET("/plugin/:id/delete", parseParamStringId, createCurdApiDelete[model.Plugin](nil, nil))
 
 	//系统接口

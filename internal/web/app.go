@@ -49,6 +49,8 @@ func Serve(addr string) {
 	//注册前端接口
 	api.RegisterRoutes(app.Group("/api"))
 
+	app.Any("/service/:name/*path", api.ServiceProxy)
+
 	//前端静态文件
 	//app.StaticFS("/www", http.FS(wwwFiles))
 

@@ -129,4 +129,11 @@ func subscribeTopics(client mqtt.Client) {
 		}
 	})
 
+	//服务注册
+	client.Subscribe("/service/register", 0, func(client mqtt.Client, message mqtt.Message) {
+		var service model.Service
+		_ = json.Unmarshal(message.Payload(), &service)
+		Services.Store(service.Name, &service)
+	})
+
 }

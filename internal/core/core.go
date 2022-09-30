@@ -10,3 +10,5 @@ var ServerStatus Map[model.Status]  //status
 
 var Devices Map[Device]
 var Projects Map[Project]
+
+var Services Map[model.Service]
