@@ -1,6 +1,6 @@
 # 物联大师
 
-**注意，2.0版本与1.0有较大差异，不可以直接升级！！！** [查看V1.0](https://github.com/zgwit/iot-master/tree/v1)
+**注意，V2.0版本与[V1.0](https://github.com/zgwit/iot-master/tree/v1)有较大差异，不可以直接升级！！！**
 
 ### [说明文档](https://iot-master.com/manual)  [演示demo](http://demo.iot-master.com:8080/) 账号密码 admin 123456
 
@@ -38,9 +38,9 @@
 
 ## 项目前端
 
-[H5版，基于uniapp框架，可以打包成APP](https://github.com/zgwit/iot-master-uniapp)
+[H5&APP版](https://github.com/zgwit/iot-master-uniapp)，基于uniapp框架
 
-[PC版，基于NG-ZORRO框架](https://github.com/zgwit/iot-master-ui)（开源版暂不维护，有商业需求请联系客服）
+[PC版](https://github.com/zgwit/iot-master-ui)，基于NG-ZORRO框架
 
 
 ## 咨询服务
