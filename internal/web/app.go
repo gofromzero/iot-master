@@ -3,6 +3,7 @@ package web
 import (
 	"context"
 	"embed"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
@@ -38,6 +39,12 @@ func Serve(addr string) {
 
 	//if cfg.Debug {
 	app.Use(gin.Logger())
+
+	//跨域问题
+	cfg := cors.DefaultConfig()
+	cfg.AllowAllOrigins = true
+	cfg.AllowCredentials = true
+	app.Use(cors.New(cfg))
 
 	//启用session
 	app.Use(sessions.Sessions("iot-master", cookie.NewStore([]byte("iot-master"))))
