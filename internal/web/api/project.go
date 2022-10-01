@@ -26,7 +26,7 @@ func afterProjectDelete(id interface{}) error {
 func projectValues(ctx *gin.Context) {
 	project := core.Projects.Load(ctx.GetString("id"))
 	if project == nil {
-		replyFail(ctx, "找不到项目")
+		replyFail(ctx, "找不到项目变量")
 		return
 	}
 	replyOk(ctx, project.Values)

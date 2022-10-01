@@ -63,7 +63,7 @@ func afterDeviceDelete(id interface{}) error {
 func deviceValues(ctx *gin.Context) {
 	device := core.Devices.Load(ctx.GetString("id"))
 	if device == nil {
-		replyFail(ctx, "找不到设备")
+		replyFail(ctx, "找不到设备变量")
 		return
 	}
 	replyOk(ctx, device.Values)
