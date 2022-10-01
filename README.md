@@ -50,6 +50,7 @@
 ### [PC版](https://github.com/zgwit/iot-master-ui)，基于NG-ZORRO框架
 
 ![web](https://iot-master.com/web1.jpg)
+![scada](https://iot-master.com/hmi-editor.png)
 
 ## 咨询服务
 
